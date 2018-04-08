@@ -3,6 +3,8 @@
 
 #include "CalcMain.h"
 
+/* All rights to Kedar Kulkarni */
+
 class CalcNum : protected CalcMain
 {
     public:

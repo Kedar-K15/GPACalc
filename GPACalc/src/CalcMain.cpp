@@ -12,6 +12,8 @@
 #include "CalcNum.h"
 #include "CalcAlpha.h"
 
+/* All rights to Kedar Kulkarni */
+
 using namespace std::chrono;
 
 void CalcMain::start_main() {

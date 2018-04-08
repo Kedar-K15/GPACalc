@@ -4,6 +4,8 @@
 #include "CalcMain.h"
 #include <unordered_map>
 
+/* All rights to Kedar Kulkarni */
+
 class CalcAlpha : protected CalcMain
 {
     public:

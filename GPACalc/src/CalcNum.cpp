@@ -8,6 +8,8 @@
 #include "CalcNum.h"
 #include "CalcMain.h"
 
+/* All rights to Kedar Kulkarni */
+
 void CalcNum::num_calculate() {
     set_null(0, false);
 

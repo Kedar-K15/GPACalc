@@ -1,6 +1,7 @@
 #include <iostream>
 #include "CalcMain.h"
 
+/* All rights to Kedar Kulkarni */
 
 int main()
 {

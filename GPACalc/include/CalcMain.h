@@ -1,6 +1,7 @@
 #ifndef CALCMAIN_H
 #define CALCMAIN_H
 
+/* All rights to Kedar Kulkarni */
 
 class CalcMain
 {

@@ -5,6 +5,8 @@
 #include "CalcAlpha.h"
 #include "CalcMain.h"
 
+/* All rights to Kedar Kulkarni */
+
 bool CalcAlpha::in_map(const std::string& grade, const std::unordered_map<std::string,float>& given) {
     std::unordered_map<std::string,float>::const_iterator found = given.find(grade);
     return found != given.end();
