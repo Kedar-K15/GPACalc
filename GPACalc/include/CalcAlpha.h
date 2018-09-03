@@ -38,6 +38,7 @@ class CalcAlpha : protected CalcMain
         const unsigned int AP = 1.0;
         bool terminated;
         bool selected_advanced;
+        std::vector<int> history;
 
         std::unordered_map<std::string,float> grades = {
             {"a", 4},

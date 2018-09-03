@@ -23,6 +23,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <string>
 #include <Windows.h>
 #include <algorithm>
+#include <vector>
 #include "CalcNum.h"
 #include "CalcMain.h"
 
@@ -49,45 +50,53 @@ void CalcNum::num_calculate() {
         help();
     }
     else {
+      int index = -1;
         do {
             space();
             change_color(2,2);
-            std::cout << "Enter the periods " << "(" << num_of_periods+1 << ")" << " GPA or enter in \"-1\" to calculate: ";
+            std::cout << "Enter the periods " << "(" << ++num_of_periods << ")" << " GPA or enter in \"-1\" to calculate: ";
             while(std::getline(std::cin, period_input)) {
                 std::stringstream ss_f(period_input);
                 if(ss_f >> period) {
-                    if(ss_f.eof() && period <= max && period >= min) {
-                        // Success
-                        num_of_periods++;
+                    std::cout << "INSIDE IF STATEMENT AND THE VAL USED: " << period << std::endl;
+                    std::cout << "NUM OF PERIODS: " << num_of_periods << std::endl;
+                    if(period <= max && period > stop) {
+                        history.push_back(period);
+                        index = history.size()-1;
                         period_sum += period;
                         break;
                     }
+                    else if(period == stop) {
+                        num_of_periods--;
+                        total_avg = period_sum/num_of_periods;
+                        break;
+                    }
+                    else if(num_of_periods > 1 && period == -2) {
+                        num_of_periods -= 2.0;
+                        period_sum -= history.at(index);
+                        history.erase(history.begin() + index);
+                        index--;
+                        break;
+                    }
+                    else if(period < stop) {
+                        change_color(4,4);
+                        space();
+                        std::cout << "Do not enter a number less than \"-1\" for calculation purposes only" << std::endl;
+                        std::cout << "Try again: ";
+                    }
+                    else if(period > max) {
+                        change_color(4,4);
+                        space();
+                        std::cout << "Do not enter a number greater than the max range of \"5.0\" " << std::endl;
+                        std::cout  << "Try again: ";
+                    }
                 }
-
-                if(!ss_f.eof()) {
+                else {
                     change_color(4,4);
                     std::cout << "Incorrect input. Try again: ";
                 }
-                if(period > max && ss_f.eof()) {
-                    change_color(4,4);
-                    space();
-                    std::cout << "Do not enter a number greater than the max range of \"5.0\" " << std::endl;
-                    std::cout  << "Try again: ";
-                }
-                if(period < min && ss_f.eof()) {
-                    change_color(4,4);
-                    space();
-                    std::cout << "Do not enter a number less than \"-1\" for calculation purposes only" << std::endl;
-                    std::cout << "Try again: ";
-                }
             }
-
-            if(period == min) {
-                period_sum += 1.0;
-                num_of_periods -= 1.0;
-                total_avg = period_sum/num_of_periods;
-            }
-        } while(period != min);
+        } while(period != stop);
 
         results();
     }

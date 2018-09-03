@@ -28,9 +28,10 @@ class CalcNum : protected CalcMain
 
     private:
         unsigned const int max = 5;
-        const int min = -1;
+        const int stop = -1;
         std::string period_input;
         std::string num_input;
+        std::vector<int> history;
 };
 
 #endif // CALCNUM_H

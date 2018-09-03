@@ -20,6 +20,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <string>
 #include <unordered_map>
 #include <stdexcept>
+#include <vector>
 #include "CalcAlpha.h"
 #include "CalcMain.h"
 
@@ -78,27 +79,40 @@ void CalcAlpha::alpha_calculate() {
             }
         }
 
+        int index = -1;
         do {
             entered_correctly = false;
             space();
             change_color(2,2);
-            std::cout << "Enter the periods " << "(" << num_of_periods+1 << ")" << " letter GPA or enter in \"-1\" to calculate: ";
+            std::cout << "Enter the periods " << "(" << ++num_of_periods << ")" << " letter GPA or enter in \"-1\" to calculate: ";
             try {
                 std::getline(std::cin, letter_input);
                 if(!(is_lower(letter_input))) {
                     to_lowercase(letter_input);
                 }
 
-                if(!in_map(letter_input, grades) && letter_input != "-1") {
+                if(!in_map(letter_input, grades) && letter_input != "-1" && letter_input != "-2") {
                     change_color(4,4);
                     std::cout << "Incorrect input. Try again: " << std::endl;
+                    num_of_periods--;
                 }
                 else if(letter_input == "-1") {
+                    num_of_periods--;
                     total_avg = period_sum/num_of_periods;
                     terminated = true;
                 }
+                else if(num_of_periods > 1 && letter_input == "-2") {
+                    num_of_periods -= 2.0;
+                    period_sum -= history.at(index);
+                    history.erase(history.begin() + index);
+                    index--;
+                }
+                else if(letter_input == "-2") {
+                   change_color(4,4);
+                   std::cout << "Incorrect input. Try again: " << std::endl;
+                   num_of_periods--;
+                }
                 else {
-                    num_of_periods++;
                     period = grades.at(letter_input);
                     if(selected_advanced) {
                         change_color(4,3); // white
@@ -112,14 +126,20 @@ void CalcAlpha::alpha_calculate() {
                             }
 
                             if(which_advanced == "hn") {
+                                history.push_back(period+honors);
+                                index = history.size()-1;
                                 period_sum += (period+honors);
                                 entered_correctly = true;
                             }
                             else if(which_advanced == "ap") {
+                                history.push_back(period+AP);
+                                index = history.size()-1;
                                 period_sum += (period+AP);
                                 entered_correctly = true;
                             }
                             else if(which_advanced == "n") {
+                                history.push_back(period);
+                                index = history.size()-1;
                                 period_sum += period;
                                 entered_correctly = true;
                             }
@@ -129,6 +149,8 @@ void CalcAlpha::alpha_calculate() {
                         }
                     }
                     else {
+                        history.push_back(period);
+                        index = history.size()-1;
                         period_sum += period;
                     }
                 }
