@@ -58,8 +58,6 @@ void CalcNum::num_calculate() {
             while(std::getline(std::cin, period_input)) {
                 std::stringstream ss_f(period_input);
                 if(ss_f >> period) {
-                    std::cout << "INSIDE IF STATEMENT AND THE VAL USED: " << period << std::endl;
-                    std::cout << "NUM OF PERIODS: " << num_of_periods << std::endl;
                     if(period <= max && period > stop) {
                         history.push_back(period);
                         index = history.size()-1;
