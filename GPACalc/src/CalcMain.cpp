@@ -35,13 +35,13 @@ using namespace std::chrono;
 void CalcMain::start_main() {
     set_null(0, false);
     change_color(1,3);
-    std::cout << "Hello! This is a program to calculate your Grade Point Average" << std::endl;
+    std::cout << "Hello! This is a program to calculate your Grade Point Average \n";
     space();
 
-    std::cout << "You may calculate by either entering in numbers or letter grades" << std::endl;
+    std::cout << "You may calculate by either entering in numbers or letter grades \n";
     change_color(1,4);
-    std::cout << "Enter in \"1\" for numbers or \"2\" for letters" << std::endl;
-    std::cout << "Enter in \"H\" for the \"HELP PAGE\" " << std::endl;
+    std::cout << "Enter in \"1\" for numbers or \"2\" for letters \n";
+    std::cout << "Enter in \"H\" for the \"HELP PAGE\" \n";
     space();
     change_color(2,2);
     std::cout << "Choose the calculator type: ";
@@ -67,7 +67,8 @@ void CalcMain::start_main() {
         }
         else {
             change_color(4,4);
-            std::cout << "Incorrect input. Try again: ";
+            std::cout << "Incorrect input" << std::endl;
+            std::cout << "Try again: ";
         }
     }
 }
@@ -86,69 +87,70 @@ void CalcMain::help() {
     clear_screen();
 
     change_color(1,2);
-        std::cout << "Hi! Welcome to the GPA Calculator Help Screen." << std::endl;
+        std::cout << "Hi! Welcome to the GPA Calculator Help Screen.\n";
         space();
-        std::cout << "Below are some things that can help you: " << std::endl; //re-word
+        std::cout << "Below are some things that can help you: \n";
         space();
 
     change_color(4,4);
-    std::cout << "***This program is not case-sensitive to any degree***" << std::endl;
+    std::cout << "***This program is not case-sensitive to any degree***\n";
     change_color(1,4);
-    std::cout << "In the numbers calculator: " << std::endl;
+    std::cout << "In the numbers calculator: \n";
     change_color(4,4);
-        std::cout << "***Refrain from entering any non-numerical values, " << std::endl;
-        std::cout << " negative numbers other than \"-1\" to calculate, and numbers greater than \"5.0\"*** " << std::endl;
+        std::cout << "***Refrain from entering any non-numerical values, \n";
+        std::cout << " negative numbers other than \"-1\" to calculate, and numbers greater than \"5.0\"*** \n";
     change_color(1,4);
-    std::cout << "In the letters calculator: " << std::endl;
+    std::cout << "In the letters calculator: \n";
     change_color(4,4);
-        std::cout << "***Refrain from entering any numerical values other than \"-1\" to calculate, " << std::endl;
-        std::cout << " and letters other than the ones shown in the table below*** " << std::endl;
+        std::cout << "***Refrain from entering any numerical values other than \"-1\" or \"-2\", \n";
+        std::cout << " and letters other than the ones shown in the table below*** \n";
     space();
 
     change_color(1,4);
-    std::cout << "How to use the program:" << std::endl;
-        std::cout << " This is a program to calculate your Grade Point Average in two different ways. In order to do this, follow these steps:";
-        std::cout << "  1. From the menu, enter in \"1\" for the numbers calculator, \"2\" for the letters calculator, or \"H\" for this page" << std::endl;
-        std::cout << "  2. When prompted, start entering your GPA values in letter or numerical form, depending on the calculator" << std::endl;
+    std::cout << "How to use the program: \n";
+        std::cout << " This is a program to calculate your Grade Point Average in two different ways. Follow these steps: \n";
+        std::cout << "  1. From the menu, enter in \"1\" for the numbers calculator, \"2\" for the letters calculator, or \"H\" for this page \n";
+        std::cout << "  2. When prompted, start entering your GPA values in letter or numerical form, depending on the calculator \n";
         change_color(4,4);
-        std::cout << "     NOTE: For the letters calculator: Entering \"Y\" will ask you what type of class you have entered," << std::endl;
-        std::cout << "     entering \"N\" will not" << std::endl;
-        std::cout << "     NOTE: You must press the \"ENTER\" key after each value" << std::endl;
+        std::cout << "     NOTE: For the letters calculator: Entering \"Y\" will ask you what type of class you have entered, \n";
+        std::cout << "     entering \"N\" will not \n";
+        std::cout << "     NOTE: You must press the \"ENTER\" key after each value \n";
         change_color(1,4);
-        std::cout << "  3. After you have entered all of your values, press the \"ENTER\" key one more time and type in \"-1\" to calculate" << std::endl;
+        std::cout << "  3. After you have entered all of your values, press the \"ENTER\" key one more time and type in \"-1\" to calculate \n";
         change_color(4,4);
-        std::cout << "     NOTE: Entering this integer will not affect your GPA value" << std::endl;
+        std::cout << "     NOTE: If you entered an incorrect value, type in \"-2\" to go back to the previous period \n";
+        std::cout << "     NOTE: Entering this integer will not affect your GPA value \n";
         change_color(1,4);
-        std::cout << "  4. That's it! You will see text in purple containing all the information you need" << std::endl;
+        std::cout << "  4. That's it! You will see text in purple containing all the information you need \n";
 
     space();
-    std::cout << "Write to file functionality:" << std::endl;
-        std::cout << " After you obtain your results, the program will automatically write them to a text file given" << std::endl;
+    std::cout << "Write to file functionality: \n";
+        std::cout << " After you obtain your results, the program will automatically write them to a text file given \n";
         change_color(4,4);
-        std::cout << " NOTE: The application and notepad file must be in the same folder directory" << std::endl;
-        std::cout << " NOTE: The application must be named: " << from << std::endl;
-        std::cout << " NOTE: The notepad file must be named: " << to << std::endl;
+        std::cout << " NOTE: The application and notepad file must be in the same folder directory \n";
+        std::cout << " NOTE: The application must be named: " << from << '\n';
+        std::cout << " NOTE: The notepad file must be named: " << to << '\n';
         change_color(1,4);
-        std::cout << " Any other file paths will return in an error message in the program" << std::endl;
-        std::cout << " You have the option to enter another file path for the program to write the data to" << std::endl;
+        std::cout << " Any other file paths will return in an error message in the program \n";
+        std::cout << " You have the option to enter another file path for the program to write the data to \n";
         change_color(4,4);
-        std::cout << " NOTE: You must enter this file path every time you want to write data to the file" << std::endl;
+        std::cout << " NOTE: You must enter this file path every time you want to write data to the file \n";
         change_color(1,4);
 
     space();
 
     change_color(2,2);
-    std::cout << "Below is a Grade Point Average Table for your reference:" << std::endl;
+    std::cout << "Below is a Grade Point Average Table for your reference: \n";
         space();
         table();
     change_color(4,1);
         space();
-    std::cout << "Contact Me:" << std::endl;
-        std::cout << "Email me any suggestions at: dev.kedarkulkarni@gmail.com" << std::endl;
+    std::cout << "Contact Me: \n";
+        std::cout << "Email me any suggestions at: dev.kedarkulkarni@gmail.com \n";
         space();
 
     change_color(4,4);
-        std::cout << "This program was made by Kedar Kulkarni" << std::endl;
+        std::cout << "This program was made by Kedar Kulkarni \n";
 
     restart();
 }
@@ -157,8 +159,8 @@ void CalcMain::restart() {
     entered_correctly = false;
     space();
     change_color(1,2);
-    std::cout << "Would you like to calculate your GPA? Enter in \"1 or 2\" to restart the program or \"S\" to stop it" << std::endl;
-    std::cout << "1: Numbers; 2: Letters" << std::endl;
+    std::cout << "Would you like to calculate your GPA? Enter in \"1 or 2\" to restart the program or \"S\" to stop it \n";
+    std::cout << "1: Numbers; 2: Letters \n";
     space();
     std::cout << "Enter here: ";
 
@@ -185,22 +187,23 @@ void CalcMain::restart() {
         }
         else {
             change_color(4,4);
-            std::cout << "Incorrect input. Try again: ";
+            std::cout << "Incorrect input" << std::endl;
+            std::cout << "Try again: ";
         }
     }
 }
 
 void CalcMain::end_screen() {
     change_color(1,2);
-    std::cout << "Thanks for calculating! I hope you liked this program" << std::endl;
+    std::cout << "Thanks for calculating! I hope you liked this program \n";
     space();
 
     change_color(2,2);
-    std::cout << "Email me any suggestions at dev.kedarkulkarni@gmail.com" << std::endl;
+    std::cout << "Email me any suggestions at dev.kedarkulkarni@gmail.com \n";
     space();
 
     change_color(1,4);
-    std::cout << "Version: 3.02; 4.8.18" << std::endl;
+    std::cout << "Version: 1.3.1; 9.4.18 \n";
     space();
 
     change_color(4,4);
@@ -308,19 +311,19 @@ void CalcMain::results() {
     if(num_of_periods == 0) {
         space();
         change_color(1,4);
-        std::cout << "Done! Here are your results: " << std::endl;
+        std::cout << "Done! Here are your results: \n";
         space();
-        std::cout << "Looks like you did not enter any periods" << std::endl;
+        std::cout << "Looks like you did not enter any periods \n";
         restart();
     }
     else {
         space();
         change_color(1,4);
-        std::cout << "Done! Here are your results: " << std::endl;
+        std::cout << "Done! Here are your results: \n";
         space();
-        std::cout << "Number of periods entered: " << num_of_periods << std::endl;
-        std::cout << "Total sum: " << period_sum << std::endl;
-        std::cout << "Average GPA: " << total_avg << std::endl;
+        std::cout << "Number of periods entered: " << num_of_periods << '\n';
+        std::cout << "Total sum: " << period_sum << '\n';
+        std::cout << "Average GPA: " << total_avg << '\n';
 
         if (total_avg > a_grade) {
             std::cout << "Final Grade: A+" << std::endl;
@@ -454,15 +457,15 @@ void CalcMain::save_data(float period_sum, float num_of_periods, float total_avg
                 else {
                     space();
                     change_color(4,4);
-                    std::cout << "The notepad file path was not found" << std::endl;
-                    std::cout << "The application and notepad file must be in the same folder directory" << std::endl;
-                    std::cout << "The application must be named: " << from << std::endl;
-                    std::cout << "The notepad file must be named: " << to << std::endl;
-                    std::cout << "The file path: " << file_directory << " does not exist" << std::endl;
+                    std::cout << "The notepad file path was not found \n";
+                    std::cout << "The application and notepad file must be in the same folder directory \n";
+                    std::cout << "The application must be named: " << from << '\n';
+                    std::cout << "The notepad file must be named: " << to << '\n';
+                    std::cout << "The file path: " << file_directory << " does not exist \n";
 
                     space();
                     change_color(1,4);
-                    std::cout << "Would you like to store your data? Enter in \"Y\" if so and \"N\" if not." << std::endl;
+                    std::cout << "Would you like to store your data? Enter in \"Y\" if so and \"N\" if not. \n";
                     space();
                     std::cout << "Enter here: ";
                     while(!entered_correctly) {
@@ -481,7 +484,8 @@ void CalcMain::save_data(float period_sum, float num_of_periods, float total_avg
                         }
                         else {
                             change_color(4,4);
-                            std::cout << "Incorrect input. Try again: ";
+                            std::cout << "Incorrect input" << std::endl;
+                            std::cout << "Try again: ";
                         }
                     }
                 }
@@ -490,14 +494,14 @@ void CalcMain::save_data(float period_sum, float num_of_periods, float total_avg
         else {
             space();
             change_color(4,4);
-            std::cout << "The application file path was not found" << std::endl;
-            std::cout << "The application and notepad file must be in the same folder directory" << std::endl;
-            std::cout << "The application must be named: " << from << std::endl;
-            std::cout << "The notepad file must be named: " << to << std::endl;
-            std::cout << "You can manually enter the directory of the file or terminate the program and follow the directions above" << std::endl;
+            std::cout << "The application file path was not found \n";
+            std::cout << "The application and notepad file must be in the same folder directory \n";
+            std::cout << "The application must be named: " << from << '\n';
+            std::cout << "The notepad file must be named: " << to << '\n';
+            std::cout << "You can manually enter the directory of the file or terminate the program and follow the directions above \n";
             space();
             change_color(1,4);
-            std::cout << "Would you like to store your data? Enter in \"Y\" if so and \"N\" if not." << std::endl;
+            std::cout << "Would you like to store your data? Enter in \"Y\" if so and \"N\" if not. \n";
             space();
             std::cout << "Enter here: ";
             while(!entered_correctly) {
@@ -516,7 +520,8 @@ void CalcMain::save_data(float period_sum, float num_of_periods, float total_avg
                 }
                 else {
                     change_color(4,4);
-                    std::cout << "Incorrect input. Try again: ";
+                    std::cout << "Incorrect input" << std::endl;
+                    std::cout << "Try again: ";
                 }
             }
         }
@@ -561,7 +566,8 @@ void CalcMain::save_rand() {
         else {
             space();
             change_color(4,4);
-            std::cout << "The file you entered does not exist. Try again: ";
+            std::cout << "The file you entered does not exist" << std::endl;
+            std::cout << "Try again: ";
         }
     } while(!found_file);
 }

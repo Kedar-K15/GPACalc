@@ -31,11 +31,11 @@ void CalcNum::num_calculate() {
     set_null(0, false);
 
     change_color(1,3);
-    std::cout << "Hello! Use this program to calculate your GPA using numbers" << std::endl;
+    std::cout << "Hello! Use this program to calculate your GPA using numbers \n";
     space();
 
     change_color(4,4);
-    std::cout << "Do not enter negative numbers other than \"-1\" or numbers greater than \"5.0\" " << std::endl;
+    std::cout << "Do not enter negative numbers other than \"-1\" to calculate, \"-2\" to redo, or numbers greater than \"5.0\" \n";
     space();
 
     change_color(1,2);
@@ -91,7 +91,8 @@ void CalcNum::num_calculate() {
                 }
                 else {
                     change_color(4,4);
-                    std::cout << "Incorrect input. Try again: ";
+                    std::cout << "Incorrect input" << std::endl;
+                    std::cout << "Try again: ";
                 }
             }
         } while(period != stop);

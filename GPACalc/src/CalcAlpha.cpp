@@ -35,11 +35,11 @@ void CalcAlpha::alpha_calculate() {
     selected_advanced = false;
 
     change_color(1,3);
-    std::cout << "Hello! Use this program to calculate your GPA using letters" << std::endl;
+    std::cout << "Hello! Use this program to calculate your GPA using letters \n";
     space();
 
     change_color(4,4);
-    std::cout << "Only enter letters shown on the table in the \"HELP PAGE\" and do not enter numbers other than \"-1\" to calculate" << std::endl;
+    std::cout << "Only enter valid letters from \"HELP PAGE\" and do not enter numbers other than \"-1\" to calculate or \"-2\" to redo \n";
     space();
 
     change_color(1,2);
@@ -57,7 +57,7 @@ void CalcAlpha::alpha_calculate() {
     else {
         change_color(2,2);
         space();
-        std::cout << "Are there any honors or AP classes in your schedule? Enter in \"Y\" if so and \"N\" if not" << std::endl;
+        std::cout << "Are there any honors or AP classes in your schedule? Enter in \"Y\" if so and \"N\" if not \n";
         space();
         std::cout << "Enter here: ";
         while(!entered_correctly) {
@@ -75,7 +75,8 @@ void CalcAlpha::alpha_calculate() {
             }
             else {
                 change_color(4,4);
-                std::cout << "Incorrect input. Try again: ";
+                std::cout << "Incorrect input" << std::endl;
+                std::cout << "Try again: ";
             }
         }
 
@@ -93,7 +94,8 @@ void CalcAlpha::alpha_calculate() {
 
                 if(!in_map(letter_input, grades) && letter_input != "-1" && letter_input != "-2") {
                     change_color(4,4);
-                    std::cout << "Incorrect input. Try again: " << std::endl;
+                    std::cout << "Incorrect input" << std::endl;
+                    std::cout << "Try again: ";
                     num_of_periods--;
                 }
                 else if(letter_input == "-1") {
@@ -109,7 +111,8 @@ void CalcAlpha::alpha_calculate() {
                 }
                 else if(letter_input == "-2") {
                    change_color(4,4);
-                   std::cout << "Incorrect input. Try again: " << std::endl;
+                   std::cout << "Incorrect input" << std::endl;
+                   std::cout << "Try again: ";
                    num_of_periods--;
                 }
                 else {
@@ -144,7 +147,8 @@ void CalcAlpha::alpha_calculate() {
                                 entered_correctly = true;
                             }
                             else {
-                                std::cout << "Incorrect input. Try again: ";
+                                std::cout << "Incorrect input" << std::endl;
+                                std::cout << "Try again: ";
                             }
                         }
                     }
@@ -158,8 +162,8 @@ void CalcAlpha::alpha_calculate() {
             catch (const std::out_of_range& oor) {
                 space();
                 change_color(4,4);
-                std::cout << "Out of range error: " << oor.what() <<  std::endl;
-                std::cout << "Contact the developer about your issue" << std::endl;
+                std::cout << "Error: " << oor.what() <<  '\n';
+                std::cout << "Contact the developer about your issue \n";
                 restart();
                 break;
             }
